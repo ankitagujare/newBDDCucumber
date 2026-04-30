@@ -11,14 +11,17 @@ public class SwagLabCheckoutOverviewpage {
     @FindBy(xpath = "//div[@data-test='total-label']") private WebElement PriceTotal;
     @FindBy(xpath = "//button[text()='Finish']") private WebElement Finish;
 
+    WebDriver driver;    //global variable
+
 
 
     public SwagLabCheckoutOverviewpage(WebDriver driver)
     {
         PageFactory.initElements(driver,this); //className.methodName(webDriverObject, thisKeyword)
+        this.driver=driver;    //global=local  -> assign local variable info into global variable
     }
 
-    public String shipadd()
+    public String shipdd()
     {
         String sI = shippingInfo.getText();
         return sI;
